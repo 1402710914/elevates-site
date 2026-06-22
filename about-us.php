@@ -20,7 +20,7 @@ $about_intro = getPageContent($mysqli, 'about-us');
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
-                    <h1 class="page-title">About Elevates New</h1>
+                    <h1 class="page-title">About Elevates</h1>
                     <p class="page-subtitle">Creating and transforming a global community of high-achieving early & mid-career professionals and small-medium businesses.</p>
                 </div>
             </div>
