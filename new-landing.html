@@ -64,6 +64,14 @@
     .hero-text-block{order:2;margin-top:-.35rem}
     .hero-right{order:3}
     .hero-cta-block{order:4}
+    .hero-cta-block .hero-cta-actions{
+      justify-content:center;
+      width:100%;
+    }
+    .hero-cta-block .hero-stats-row{
+      margin-left:auto!important;
+      margin-right:auto!important;
+    }
     .hero-text-block p{max-width:100%!important;margin-top:.25rem!important}
     .vsl-wrap{overflow:hidden;max-width:100%}
     .vsl-glow{display:none}
@@ -105,6 +113,54 @@
     .play-ring,.play-btn,.vsl-training-label,.vsl-training-title,.cta-animate-purple,.cta-animate-gold{animation:none!important}
   }
   .vsl-foot{border-top:1px solid var(--border);background:rgba(40,30,70,.4);padding:.85rem 1.25rem;font-size:.9rem;color:var(--muted)}
+  .vsl-desktop-ctas{
+    display:flex;flex-direction:row;align-items:stretch;gap:.65rem;margin-top:1rem;
+  }
+  .btn-vsl-wa,.btn-vsl-book{
+    flex:1;min-width:0;border-radius:999px;padding:.8rem .75rem;font-weight:600;font-size:.82rem;
+    display:inline-flex;align-items:center;justify-content:center;gap:.45rem;text-decoration:none;
+    transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
+    text-align:center;line-height:1.25;
+  }
+  .btn-vsl-wa{
+    background:rgba(37,211,102,.12);color:#4ade80;border:1.5px solid rgba(37,211,102,.55);
+    box-shadow:0 12px 32px -14px rgba(37,211,102,.35);
+  }
+  .btn-vsl-wa:hover{background:rgba(37,211,102,.22);border-color:#25d366;color:#86efac;transform:translateY(-2px)}
+  .btn-vsl-book{
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:1.5px solid rgba(160,107,255,.5);
+    box-shadow:0 12px 32px -14px rgba(124,77,255,.45);
+  }
+  .btn-vsl-book:hover{color:#fff;background:linear-gradient(135deg,#8f6bff,#b88cff);transform:translateY(-2px)}
+  #discoveryModal{
+    display:none;position:fixed;inset:0;z-index:10050;background:rgba(8,6,18,.82);
+    align-items:center;justify-content:center;padding:1rem;
+  }
+  #discoveryModal.open{display:flex}
+  .discovery-modal-card{
+    width:min(480px,100%);background:linear-gradient(180deg,var(--card-2),var(--card));
+    border:1px solid var(--border);border-radius:1rem;padding:1.5rem;position:relative;
+    box-shadow:0 30px 80px -20px rgba(124,77,255,.5);
+  }
+  .discovery-modal-card h3{font-family:'Sora';font-size:1.35rem;margin:0 0 .35rem}
+  .discovery-modal-card p{color:var(--muted);font-size:.9rem;margin:0 0 1.25rem}
+  .discovery-option{
+    display:flex;align-items:center;gap:.85rem;padding:.95rem 1rem;border-radius:.85rem;
+    border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);
+    text-decoration:none;margin-bottom:.65rem;transition:border-color .2s,background .2s;
+  }
+  .discovery-option:hover{border-color:rgba(245,196,81,.45);background:rgba(124,77,255,.12);color:var(--text)}
+  .discovery-option-ico{
+    width:42px;height:42px;border-radius:.65rem;background:rgba(124,77,255,.22);color:var(--gold);
+    display:grid;place-items:center;flex-shrink:0;font-size:1.1rem;
+  }
+  .discovery-option strong{display:block;font-size:.95rem;font-family:'Sora'}
+  .discovery-option span{display:block;font-size:.78rem;color:var(--muted);margin-top:.15rem}
+  .discovery-modal-x{
+    position:absolute;top:.75rem;right:.75rem;width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);
+    display:grid;place-items:center;cursor:pointer;
+  }
   section{padding:5.5rem 0}
   .section-sm{padding:2.25rem 0}
   .bg-secondary-soft{background:rgba(40,30,70,.35);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -462,10 +518,10 @@
           </p>
         </div>
         <div class="hero-cta-block">
-          <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+          <div class="d-flex flex-wrap align-items-center gap-3 mt-4 hero-cta-actions">
             <a id="openVslFormBtn" href="#vsl" class="btn-primary-grad cta-animate-purple"><i class="bi bi-play-fill"></i> Watch the Free 12-min Training <i class="bi bi-arrow-right"></i></a>
           </div>
-          <div class="row mt-5 pt-3 border-top border-soft" style="max-width:420px">
+          <div class="row mt-5 pt-3 border-top border-soft hero-stats-row" style="max-width:420px">
             <div class="col-4"><div class="stat-val">2×</div><div class="stat-lab">Avg. income jump</div></div>
             <div class="col-4"><div class="stat-val">6 mo</div><div class="stat-lab">To transformation</div></div>
             <div class="col-4"><div class="stat-val">360°</div><div class="stat-lab">Tech + Vital skills</div></div>
@@ -500,6 +556,14 @@
               You'll discover the <span style="color:var(--text)">Trusted Advisor</span> framework that turns "just another pre-sales engineer" into the person every client asks for.
             </div>
           </div>
+        </div>
+        <div class="vsl-desktop-ctas d-none d-lg-flex">
+          <a href="https://wa.me/919311799336?text=Hi%20Elevates%2C%20I%20watched%20the%20free%20training%20and%20would%20like%20to%20connect." class="btn-vsl-wa" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i> Connect on WhatsApp Now
+          </a>
+          <button type="button" class="btn-vsl-book" id="openDiscoveryModalBtn">
+            <i class="bi bi-calendar-check"></i> Book a Discovery Call
+          </button>
         </div>
       </div>
     </div>
@@ -710,17 +774,6 @@
             </div>
           </div>
 
-          <!-- Designation -->
-          <div class="full">
-            <label class="m-label">Current Designation</label>
-            <div class="pill-group-col">
-              <label><input type="radio" name="designation" value="IT Infra/Data Center (Public/Private/Hybrid Cloud) and Application Pre-Sales and Solutions Architect" required /><span class="pill-opt" style="display:block;white-space:normal;line-height:1.4">IT Infra / Data Center Pre-Sales &amp; Solutions Architect</span></label>
-              <label><input type="radio" name="designation" value="Solutions Engineer/Systems Engineer/Sales Engineer" /><span class="pill-opt" style="display:block;white-space:normal;line-height:1.4">Solutions / Systems / Sales Engineer</span></label>
-              <label><input type="radio" name="designation" value="IT Infra/Data Center (Public/Private/Hybrid Cloud) and Application Sales and Business Development Executive/ Bid managers" /><span class="pill-opt" style="display:block;white-space:normal;line-height:1.4">IT Sales / BD Executive / Bid Manager</span></label>
-              <label><input type="radio" name="designation" value="Sales Account Manager/ Inside Sales Representative(ISR)/ Channel Sales Manager" /><span class="pill-opt" style="display:block;white-space:normal;line-height:1.4">Account Manager / ISR / Channel Sales Manager</span></label>
-            </div>
-          </div>
-
           <!-- Looking For -->
           <div class="full">
             <label class="m-label" for="v_looking">What are you looking for?</label>
@@ -758,8 +811,63 @@
   </div>
 </div>
 
+<!-- Discovery booking modal (desktop CTA) -->
+<div id="discoveryModal" role="dialog" aria-modal="true" aria-labelledby="discoveryModalTitle">
+  <div class="discovery-modal-card">
+    <button type="button" class="discovery-modal-x" id="discoveryModalClose" aria-label="Close">×</button>
+    <h3 id="discoveryModalTitle">Book a Discovery Call</h3>
+    <p>Choose your path and pick an available time slot.</p>
+    <a href="https://elevates.exlyapp.com/4526b6a9-4a1b-4fdd-8a08-1dc019fd3def?compact=true&init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
+      <span class="discovery-option-ico"><i class="bi bi-person-badge"></i></span>
+      <span>
+        <strong>Individual Professional</strong>
+        <span>Career growth &amp; salary acceleration programs</span>
+      </span>
+      <i class="bi bi-arrow-right ms-auto"></i>
+    </a>
+    <a href="https://elevates.exlyapp.com/75e8ebac-43bc-4faa-86d6-948f4bd4c5da?init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
+      <span class="discovery-option-ico"><i class="bi bi-building"></i></span>
+      <span>
+        <strong>Business Owner</strong>
+        <span>Team enablement &amp; business growth consulting</span>
+      </span>
+      <i class="bi bi-arrow-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---- Discovery booking modal (desktop) ----
+  const discoveryModal = document.getElementById('discoveryModal');
+  const openDiscoveryModalBtn = document.getElementById('openDiscoveryModalBtn');
+  const discoveryModalClose = document.getElementById('discoveryModalClose');
+
+  function openDiscoveryModal(){
+    if(!discoveryModal) return;
+    discoveryModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDiscoveryModal(){
+    if(!discoveryModal) return;
+    discoveryModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if(openDiscoveryModalBtn){
+    openDiscoveryModalBtn.addEventListener('click', openDiscoveryModal);
+  }
+  if(discoveryModalClose){
+    discoveryModalClose.addEventListener('click', closeDiscoveryModal);
+  }
+  if(discoveryModal){
+    discoveryModal.addEventListener('click', function(e){
+      if(e.target === discoveryModal) closeDiscoveryModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeDiscoveryModal();
+  });
 
   // ---- Input filled-state highlight ----
   document.querySelectorAll('#vslAccessForm input.m-input, #vslAccessForm select.m-input').forEach(function(el){
@@ -928,7 +1036,6 @@
     if(!d.get('email').trim()) missing.push('Email');
     if(!d.get('experience')) missing.push('Experience');
     if(!d.get('salary')) missing.push('Salary');
-    if(!d.get('designation')) missing.push('Designation');
     if(!d.get('looking')) missing.push('What you\'re looking for');
     if(missing.length){
       formError.style.display='block';

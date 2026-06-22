@@ -33,9 +33,12 @@ $email = trim($_POST['email'] ?? '');
 $experience = trim($_POST['experience'] ?? '');
 $salary = trim($_POST['salary'] ?? '');
 $designation = trim($_POST['designation'] ?? '');
+if ($designation === '') {
+    $designation = 'Not provided';
+}
 $looking = trim($_POST['looking'] ?? '');
 
-if ($name === '' || $phone === '' || $email === '' || $experience === '' || $salary === '' || $designation === '' || $looking === '') {
+if ($name === '' || $phone === '' || $email === '' || $experience === '' || $salary === '' || $looking === '') {
     http_response_code(422);
     echo json_encode(['ok' => false, 'message' => 'Please fill all required fields.']);
     exit;
