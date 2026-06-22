@@ -1,0 +1,26 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local secrets (copy from *.example.php on each machine)
+db.php
+google_sheet_config.php
+
+# Large media — keep on server manually (GitHub 100MB limit)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Old backup copy of the site
+old/
+
+# User uploads (server-specific)
+uploads/*
+!uploads/.gitkeep
+
+# Logs / temp
+*.log
+error_log

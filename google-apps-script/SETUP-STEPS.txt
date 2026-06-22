@@ -1,0 +1,64 @@
+GOOGLE SHEET — seedha setup (ELEVATES)
+=====================================
+
+A) Google Sheet + Apps Script
+-----------------------------
+1. Apni sheet kholo (jis link se tumne kaha tha).
+
+2. Menu: Extensions → Apps Script
+   (Hindi UI ho to: विस्तार → Apps Script)
+
+3. Poora code delete karke hamara file SpreadsheetAppend.gs ka code paste karo.
+
+4. Line par WEBAPP_SECRET badlo — koi lamba random password jaisa, jaise:
+   myElevates2026SheetSyncXk9pL2
+
+5. Upar disk (Save) icon — Save project.
+
+6. IMPORTANT — pehli baar permission:
+   - Function dropdown se agar "testOpenSpreadsheet" dikhe to Run dabao.
+   - Ya main menu: Run → testOpenSpreadsheet (ye function file me hai).
+   - Google "Review permissions" → apna account → Allow.
+
+7. DEPLOY (yahi sabse confusing hai):
+   - Right side: Deploy → New deployment
+   - Gear icon "Select type" → Web app
+   - Execute as: Me
+   - Who has access: Anyone  (zaroori — warna server se POST block)
+   - Deploy dabao
+   - "Web app URL" copy karo — isme /exec laga hota hai
+   - Agar code change karo baad me → Deploy → Manage deployments → pencil → New version → Deploy
+     (purana URL same rehta hai)
+
+8. WEBAPP_SECRET jo script me likha hai, wahi exact value
+   PHP file one/google_sheet_config.php me GOOGLE_SHEET_SECRET me likho.
+
+9. Web app URL ko GOOGLE_SHEET_WEBAPP_URL me likho.
+
+
+B) PHP / XAMPP
+--------------
+1. one/google_sheet_config.php me dono define() bharo.
+
+2. Browser me kholo:
+   http://localhost/elevate1/one/test_google_sheet.php
+   (apna path jo bhi ho)
+
+3. "Test row bhejo" dabao.
+   - Agar {"ok":true} dikhe → Sheet ke "Enquiries" tab me nayi row dekho.
+   - Agar unauthorized → dono jagah secret match nahi.
+   - Agar HTTP 302/empty → ab code fix ho chuka hai (curl redirect); phir bhi issue ho to XAMPP error log dekho.
+
+
+C) Browser se sirf check (optional)
+------------------------------------
+Deployed URL ke end par lagao (secret apna):
+   ?ping=1&secret=YAHA_WEBAPP_SECRET
+
+Page par JSON: {"ok":true,"message":"web app is live"} aana chahiye.
+
+
+D) Security
+-----------
+Test khatam hone ke baad test_google_sheet.php delete / rename kar dena.
+google_sheet_config.php Git par public mat daalna.
