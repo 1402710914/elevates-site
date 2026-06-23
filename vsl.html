@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Free Training — ELEVATES</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" href="img/fav.png" type="image/x-icon" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+<style>
+  :root{
+    --bg:#171127;--card:#241b3d;--border:#3a2f5a;--text:#f5f1fb;--muted:#b5acc9;
+    --primary:#7c4dff;--primary-2:#a06bff;--gold:#f5c451;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;min-height:100vh;
+    background:radial-gradient(ellipse at top,#2a1f55 0%,var(--bg) 60%);
+    color:var(--text);font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{font-family:'Sora',sans-serif;letter-spacing:-0.02em}
+  .vsl-page{padding:2.5rem 0 4rem}
+  .vsl-page-inner{max-width:1140px}
+  .vsl-page-logo{height:52px;background:rgba(255,255,255,.95);padding:.35rem;border-radius:.55rem}
+  .vsl-page-head{text-align:center;margin-bottom:1.75rem}
+  .vsl-page-head .eyebrow{
+    color:var(--gold);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;
+  }
+  .vsl-page-head h1{font-size:clamp(1.35rem,3vw,2rem);margin:.65rem 0 .5rem;line-height:1.25}
+  .vsl-page-head p{color:var(--muted);font-size:.95rem;margin:0;max-width:640px;margin-inline:auto}
+  .vsl-player-card{
+    width:100%;background:var(--card);border:1px solid var(--border);border-radius:1rem;overflow:hidden;
+    box-shadow:0 30px 80px -20px rgba(124,77,255,.45);
+  }
+  .vsl-player-top{
+    display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+    background:rgba(40,30,70,.6);border-bottom:1px solid var(--border);
+    padding:.6rem 1rem;font-size:.75rem;color:var(--muted);
+  }
+  .vsl-player-wrap{
+    position:relative;width:100%;aspect-ratio:16/9;background:#000;
+  }
+  .vsl-player-wrap video{
+    position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#000;
+  }
+  .vsl-page-ctas{
+    display:flex;flex-direction:row;align-items:stretch;gap:.65rem;margin-top:1.25rem;
+  }
+  .btn-vsl-wa,.btn-vsl-book{
+    flex:1;min-width:0;border-radius:999px;padding:.85rem .75rem;font-weight:600;font-size:.82rem;
+    display:inline-flex;align-items:center;justify-content:center;gap:.45rem;text-decoration:none;
+    transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
+    text-align:center;line-height:1.25;
+  }
+  .btn-vsl-wa{
+    background:rgba(37,211,102,.12);color:#4ade80;border:1.5px solid rgba(37,211,102,.55);
+    box-shadow:0 12px 32px -14px rgba(37,211,102,.35);
+  }
+  .btn-vsl-wa:hover{background:rgba(37,211,102,.22);border-color:#25d366;color:#86efac;transform:translateY(-2px)}
+  .btn-vsl-book{
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:1.5px solid rgba(160,107,255,.5);
+    box-shadow:0 12px 32px -14px rgba(124,77,255,.45);cursor:pointer;
+  }
+  .btn-vsl-book:hover{color:#fff;background:linear-gradient(135deg,#8f6bff,#b88cff);transform:translateY(-2px)}
+  #discoveryModal{
+    display:none;position:fixed;inset:0;z-index:10050;background:rgba(8,6,18,.82);
+    align-items:center;justify-content:center;padding:1rem;
+  }
+  #discoveryModal.open{display:flex}
+  .discovery-modal-card{
+    width:min(480px,100%);background:linear-gradient(180deg,#2c2348,var(--card));
+    border:1px solid var(--border);border-radius:1rem;padding:1.5rem;position:relative;
+    box-shadow:0 30px 80px -20px rgba(124,77,255,.5);
+  }
+  .discovery-modal-card h3{font-family:'Sora';font-size:1.35rem;margin:0 0 .35rem}
+  .discovery-modal-card p{color:var(--muted);font-size:.9rem;margin:0 0 1.25rem}
+  .discovery-option{
+    display:flex;align-items:center;gap:.85rem;padding:.95rem 1rem;border-radius:.85rem;
+    border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);
+    text-decoration:none;margin-bottom:.65rem;transition:border-color .2s,background .2s;
+  }
+  .discovery-option:hover{border-color:rgba(245,196,81,.45);background:rgba(124,77,255,.12);color:var(--text)}
+  .discovery-option-ico{
+    width:42px;height:42px;border-radius:.65rem;background:rgba(124,77,255,.22);color:var(--gold);
+    display:grid;place-items:center;flex-shrink:0;font-size:1.1rem;
+  }
+  .discovery-option strong{display:block;font-size:.95rem;font-family:'Sora'}
+  .discovery-option span{display:block;font-size:.78rem;color:var(--muted);margin-top:.15rem}
+  .discovery-modal-x{
+    position:absolute;top:.75rem;right:.75rem;width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);
+    display:grid;place-items:center;cursor:pointer;
+  }
+  @media(max-width:575px){
+    .vsl-page-ctas{flex-direction:column}
+    .vsl-page{padding:1.5rem 0 3rem}
+  }
+</style>
+</head>
+<body>
+
+<main class="vsl-page">
+  <div class="container vsl-page-inner px-3 px-md-4">
+    <div class="vsl-page-head">
+      <img src="img/logo.png" alt="ELEVATES" class="vsl-page-logo mb-3" />
+      <div class="eyebrow">Free Training · 12 min</div>
+      <h1>Why 9 of 10 Professionals Stay Stuck Under ₹15 LPA</h1>
+      <p>Discover the Trusted Advisor framework that turns "just another pre-sales engineer" into the person every client asks for.</p>
+    </div>
+
+    <div class="vsl-player-card">
+      <div class="vsl-player-top">
+        <span class="fw-medium">ELEVATES Success Accelerator</span>
+        <span><i class="bi bi-play-circle"></i> Now playing</span>
+      </div>
+      <div class="vsl-player-wrap">
+        <video
+          id="vslVideo"
+          controls
+          playsinline
+          preload="auto"
+          poster="landing-page-img/video.png"
+          src="landiing-page-video/landing-video.mp4"
+        ></video>
+      </div>
+    </div>
+
+    <div class="vsl-page-ctas">
+      <!-- <a href="https://wa.me/919311799336?text=Hi%20Elevates%2C%20I%20watched%20the%20free%20training%20and%20would%20like%20to%20connect." class="btn-vsl-wa" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-whatsapp"></i> Connect on WhatsApp Now
+      </a> -->
+      <button type="button" class="btn-vsl-book" id="openDiscoveryModalBtn">
+        <i class="bi bi-calendar-check"></i> Book a Discovery Call
+      </button>
+    </div>
+  </div>
+</main>
+
+<div id="discoveryModal" role="dialog" aria-modal="true" aria-labelledby="discoveryModalTitle">
+  <div class="discovery-modal-card">
+    <button type="button" class="discovery-modal-x" id="discoveryModalClose" aria-label="Close">×</button>
+    <h3 id="discoveryModalTitle">Book a Discovery Call</h3>
+    <p>Choose your path and pick an available time slot.</p>
+    <a href="https://elevates.exlyapp.com/4526b6a9-4a1b-4fdd-8a08-1dc019fd3def?compact=true&init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
+      <span class="discovery-option-ico"><i class="bi bi-person-badge"></i></span>
+      <span>
+        <strong>Individual Professional</strong>
+        <span>Career growth &amp; salary acceleration programs</span>
+      </span>
+      <i class="bi bi-arrow-right ms-auto"></i>
+    </a>
+    <a href="https://elevates.exlyapp.com/75e8ebac-43bc-4faa-86d6-948f4bd4c5da?init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
+      <span class="discovery-option-ico"><i class="bi bi-building"></i></span>
+      <span>
+        <strong>Business Owner</strong>
+        <span>Team enablement &amp; business growth consulting</span>
+      </span>
+      <i class="bi bi-arrow-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+  (function(){
+    function hasVslAccess(){
+      try{ return sessionStorage.getItem('vslFormSubmitted') === '1'; }catch(err){ return false; }
+    }
+    if(!hasVslAccess()){
+      window.location.replace('new-landing.html');
+      return;
+    }
+
+    const vid = document.getElementById('vslVideo');
+    if(vid){
+      const startPlayback = function(){
+        vid.muted = false;
+        const attempt = vid.play();
+        if(attempt && typeof attempt.catch === 'function'){
+          attempt.catch(function(){
+            vid.muted = true;
+            vid.play().catch(function(){});
+          });
+        }
+      };
+      if(vid.readyState >= 2){
+        startPlayback();
+      }else{
+        vid.addEventListener('loadeddata', startPlayback, {once:true});
+      }
+    }
+
+    const discoveryModal = document.getElementById('discoveryModal');
+    const openDiscoveryModalBtn = document.getElementById('openDiscoveryModalBtn');
+    const discoveryModalClose = document.getElementById('discoveryModalClose');
+
+    function openDiscoveryModal(){
+      discoveryModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDiscoveryModal(){
+      discoveryModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    openDiscoveryModalBtn.addEventListener('click', openDiscoveryModal);
+    discoveryModalClose.addEventListener('click', closeDiscoveryModal);
+    discoveryModal.addEventListener('click', function(e){
+      if(e.target === discoveryModal) closeDiscoveryModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeDiscoveryModal();
+    });
+  })();
+</script>
+</body>
+</html>

@@ -41,7 +41,7 @@
   .eyebrow{color:var(--gold);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.18em}
   .hero-logo{height:60px;background:rgba(255,255,255,.95);padding:.4rem;border-radius:.6rem;display:inline-block}
   .hero-logo-wrap{width:100%;text-align:center;margin-bottom:1.5rem}
-  .hero h1{font-size:1rem;line-height:1.2;overflow-wrap:break-word;word-wrap:break-word}
+  .hero h1{font-size:1.4rem;line-height:1.2;overflow-wrap:break-word;word-wrap:break-word}
   @media (min-width:992px){
     .hero h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.05}
   }
@@ -55,24 +55,17 @@
       --bs-gutter-x:0;--bs-gutter-y:0;
     }
     .hero-left{display:contents}
-    .hero-heading-block,.hero-text-block,.hero-cta-block,.hero-right{
+    .hero-heading-block,.hero-text-block,.hero-cta-actions,.hero-stats-row,.hero-right{
       order:0;width:100%;max-width:100%;min-width:0;
       padding-left:0!important;padding-right:0!important;
       flex:0 0 auto;
     }
-    .hero-heading-block{order:1;margin-bottom:-1.1rem}
-    .hero-text-block{order:2;margin-top:-.35rem}
-    .hero-right{order:3}
-    .hero-cta-block{order:4}
-    .hero-cta-block .hero-cta-actions{
-      justify-content:center;
-      width:100%;
-    }
-    .hero-cta-block .hero-stats-row{
-      margin-left:auto!important;
-      margin-right:auto!important;
-    }
-    .hero-text-block p{max-width:100%!important;margin-top:.25rem!important}
+    .hero-heading-block{order:1;margin-bottom:0}
+    .hero-right{order:2}
+    .hero-cta-actions{order:3;justify-content:center;margin-top:.5rem!important}
+    .hero-text-block{order:4;margin-top:.75rem}
+    .hero-stats-row{order:5;margin-left:auto!important;margin-right:auto!important}
+    .hero-text-block p{max-width:100%!important;margin-top:0!important}
     .vsl-wrap{overflow:hidden;max-width:100%}
     .vsl-glow{display:none}
   }
@@ -113,54 +106,6 @@
     .play-ring,.play-btn,.vsl-training-label,.vsl-training-title,.cta-animate-purple,.cta-animate-gold{animation:none!important}
   }
   .vsl-foot{border-top:1px solid var(--border);background:rgba(40,30,70,.4);padding:.85rem 1.25rem;font-size:.9rem;color:var(--muted)}
-  .vsl-desktop-ctas{
-    display:flex;flex-direction:row;align-items:stretch;gap:.65rem;margin-top:1rem;
-  }
-  .btn-vsl-wa,.btn-vsl-book{
-    flex:1;min-width:0;border-radius:999px;padding:.8rem .75rem;font-weight:600;font-size:.82rem;
-    display:inline-flex;align-items:center;justify-content:center;gap:.45rem;text-decoration:none;
-    transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
-    text-align:center;line-height:1.25;
-  }
-  .btn-vsl-wa{
-    background:rgba(37,211,102,.12);color:#4ade80;border:1.5px solid rgba(37,211,102,.55);
-    box-shadow:0 12px 32px -14px rgba(37,211,102,.35);
-  }
-  .btn-vsl-wa:hover{background:rgba(37,211,102,.22);border-color:#25d366;color:#86efac;transform:translateY(-2px)}
-  .btn-vsl-book{
-    background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:1.5px solid rgba(160,107,255,.5);
-    box-shadow:0 12px 32px -14px rgba(124,77,255,.45);
-  }
-  .btn-vsl-book:hover{color:#fff;background:linear-gradient(135deg,#8f6bff,#b88cff);transform:translateY(-2px)}
-  #discoveryModal{
-    display:none;position:fixed;inset:0;z-index:10050;background:rgba(8,6,18,.82);
-    align-items:center;justify-content:center;padding:1rem;
-  }
-  #discoveryModal.open{display:flex}
-  .discovery-modal-card{
-    width:min(480px,100%);background:linear-gradient(180deg,var(--card-2),var(--card));
-    border:1px solid var(--border);border-radius:1rem;padding:1.5rem;position:relative;
-    box-shadow:0 30px 80px -20px rgba(124,77,255,.5);
-  }
-  .discovery-modal-card h3{font-family:'Sora';font-size:1.35rem;margin:0 0 .35rem}
-  .discovery-modal-card p{color:var(--muted);font-size:.9rem;margin:0 0 1.25rem}
-  .discovery-option{
-    display:flex;align-items:center;gap:.85rem;padding:.95rem 1rem;border-radius:.85rem;
-    border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);
-    text-decoration:none;margin-bottom:.65rem;transition:border-color .2s,background .2s;
-  }
-  .discovery-option:hover{border-color:rgba(245,196,81,.45);background:rgba(124,77,255,.12);color:var(--text)}
-  .discovery-option-ico{
-    width:42px;height:42px;border-radius:.65rem;background:rgba(124,77,255,.22);color:var(--gold);
-    display:grid;place-items:center;flex-shrink:0;font-size:1.1rem;
-  }
-  .discovery-option strong{display:block;font-size:.95rem;font-family:'Sora'}
-  .discovery-option span{display:block;font-size:.78rem;color:var(--muted);margin-top:.15rem}
-  .discovery-modal-x{
-    position:absolute;top:.75rem;right:.75rem;width:36px;height:36px;border-radius:50%;
-    border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);
-    display:grid;place-items:center;cursor:pointer;
-  }
   section{padding:5.5rem 0}
   .section-sm{padding:2.25rem 0}
   .bg-secondary-soft{background:rgba(40,30,70,.35);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -358,25 +303,6 @@
   }
   .modal-x:hover{background:rgba(255,255,255,0.14);color:#fff}
 
-  /* ===== THANK YOU STATE ===== */
-  #vslThanks{display:none;text-align:center;padding:32px 24px 28px}
-  .ty-ring{
-    width:80px;height:80px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
-    background:linear-gradient(135deg,#7c4dff,#f5c451);
-    box-shadow:0 16px 48px -8px rgba(124,77,255,0.6);
-    font-size:36px;
-  }
-  #vslThanks h4{font-family:'Sora';font-size:1.4rem;margin:0 0 8px;color:#fff}
-  #vslThanks p{color:var(--muted);font-size:.9rem;margin:0 0 20px;line-height:1.6}
-  .btn-ty-watch{
-    background:var(--gold);color:var(--gold-fg);border:none;border-radius:999px;
-    padding:12px 28px;font-weight:700;font-size:.95rem;cursor:pointer;
-    display:inline-flex;align-items:center;gap:8px;
-    box-shadow:0 16px 40px -8px rgba(245,196,81,0.5);transition:transform .2s;
-  }
-  .btn-ty-watch:hover{transform:translateY(-2px)}
-  .ty-timer{font-size:.8rem;color:var(--muted);margin-top:12px}
-
   @media(max-width:480px){
     .m-row-2{grid-template-columns:1fr 1fr;gap:8px}
     .pill-group-col{grid-template-columns:1fr}
@@ -409,8 +335,7 @@
       z-index:2;
       background:linear-gradient(160deg,#1e1540 0%,#150f33 100%);
     }
-    .m-body,
-    #vslThanks{
+    .m-body{
       overflow-y:auto;
       -webkit-overflow-scrolling:touch;
       overscroll-behavior:contain;
@@ -494,7 +419,7 @@
 <div class="target-banner">
   <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-2 text-center">
     <p class="mb-0 small">
-      <strong>IT Sales and PreSales Professionals with 5+ Years of Experience</strong>
+      <strong>IT Pre-Sales & Sales professionals stuck between ₹6–15 LPA</strong>
       <span class="text-muted-2 d-none d-md-block">(Working with Tier-2, Tier-3 IT Systems Integrators, Small Medium Software Solutions Providers, OEMs. Current Salary 6 to 15 LPA)</span>
     </p>
   </div>
@@ -509,23 +434,21 @@
     <div class="row g-5 align-items-center hero-row">
       <div class="col-lg-7 hero-left">
         <div class="hero-heading-block">
-          <h1>Double Your Income. <span class="text-gradient-gold">Transform Your IT Career</span> by 360° — in 6 Months.</h1>
+          <h1>Double your Income , <span class="text-gradient-gold"> Transform your IT Sales, Pre-sales</span>  Career by 360 - in 6 months.</h1>
         </div>
         <div class="hero-text-block">
           <p class="mt-3 text-muted-2 mb-0" style="font-size:1.1rem;max-width:560px">
-            The Success Accelerator Program for IT Pre-Sales &amp; Sales professionals stuck between ₹6–15 LPA.
-            Become the <strong style="color:var(--text)">Trusted Advisor</strong> companies fight to keep — with AI, Value Selling, and the vital skills nobody teaches you.
+            The Success Accelerator Program for IT Pre-sales & Sales Professionals. 
+            Become the <strong style="color:var(--text)">Trusted Advisor</strong>  companies fight to keep- with AI, Value Selling, and the vital skills nobody teaches you.
           </p>
         </div>
-        <div class="hero-cta-block">
-          <div class="d-flex flex-wrap align-items-center gap-3 mt-4 hero-cta-actions">
-            <a id="openVslFormBtn" href="#vsl" class="btn-primary-grad cta-animate-purple"><i class="bi bi-play-fill"></i> Watch the Free 12-min Training <i class="bi bi-arrow-right"></i></a>
-          </div>
-          <div class="row mt-5 pt-3 border-top border-soft hero-stats-row" style="max-width:420px">
-            <div class="col-4"><div class="stat-val">2×</div><div class="stat-lab">Avg. income jump</div></div>
-            <div class="col-4"><div class="stat-val">6 mo</div><div class="stat-lab">To transformation</div></div>
-            <div class="col-4"><div class="stat-val">360°</div><div class="stat-lab">Tech + Vital skills</div></div>
-          </div>
+        <div class="d-flex flex-wrap align-items-center gap-3 mt-4 hero-cta-actions">
+          <a id="openVslFormBtn" href="#vsl" class="btn-primary-grad cta-animate-purple"><i class="bi bi-play-fill"></i> Watch the Free 12-min Training <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row mt-5 pt-3 border-top border-soft hero-stats-row" style="max-width:420px">
+          <div class="col-4"><div class="stat-val">2×</div><div class="stat-lab">Avg. income jump</div></div>
+          <div class="col-4"><div class="stat-val">6 mo</div><div class="stat-lab">To transformation</div></div>
+          <div class="col-4"><div class="stat-val">360°</div><div class="stat-lab">Tech + Vital skills</div></div>
         </div>
       </div>
       <div class="col-lg-5 hero-right">
@@ -556,14 +479,6 @@
               You'll discover the <span style="color:var(--text)">Trusted Advisor</span> framework that turns "just another pre-sales engineer" into the person every client asks for.
             </div>
           </div>
-        </div>
-        <div class="vsl-desktop-ctas d-none d-lg-flex">
-          <a href="https://wa.me/919311799336?text=Hi%20Elevates%2C%20I%20watched%20the%20free%20training%20and%20would%20like%20to%20connect." class="btn-vsl-wa" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-whatsapp"></i> Connect on WhatsApp Now
-          </a>
-          <button type="button" class="btn-vsl-book" id="openDiscoveryModalBtn">
-            <i class="bi bi-calendar-check"></i> Book a Discovery Call
-          </button>
         </div>
       </div>
     </div>
@@ -659,7 +574,7 @@
   <div class="container max-w-5">
     <div class="text-center">
       <span class="eyebrow">Built For You If…</span>
-      <h2 class="mt-2" style="font-size:clamp(1.6rem,3.5vw,2.4rem)">You sell or solution IT for a living — and you're done being underpriced.</h2>
+      <h2 class="mt-2" style="font-size:clamp(1.6rem,3.5vw,2.4rem)">You sell valuable IT Solutions for a living and still You are Underpaid.</h2>
     </div>
     <div class="row g-4 mt-2">
       <div class="col-md-4"><div class="card-dark p-4 h-100"><span class="tag-pill">Pre-Sales &amp; Architecture</span><p class="text-muted-2 small mt-3 mb-0">Pre-Sales Consultants, Solutions Architects, Solutions / System / Sales / Cloud Engineers, Storage &amp; Backup Specialists, Virtualization Engineers</p></div></div>
@@ -799,75 +714,18 @@
       </form>
     </div>
 
-    <!-- THANK YOU STATE -->
-    <div id="vslThanks">
-      <div class="ty-ring">✓</div>
-      <h4>You're all set!</h4>
-      <p>Thank you for registering. Your free 12-minute training is ready — discover the 3-shift Trusted Advisor system that changes everything.</p>
-      <button class="btn-ty-watch cta-animate-gold" id="vslWatchNow"><i class="bi bi-play-fill"></i> Watch Now</button>
-      <div class="ty-timer" id="tyTimer">Opening automatically in <span id="tyCount">3</span>s…</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Discovery booking modal (desktop CTA) -->
-<div id="discoveryModal" role="dialog" aria-modal="true" aria-labelledby="discoveryModalTitle">
-  <div class="discovery-modal-card">
-    <button type="button" class="discovery-modal-x" id="discoveryModalClose" aria-label="Close">×</button>
-    <h3 id="discoveryModalTitle">Book a Discovery Call</h3>
-    <p>Choose your path and pick an available time slot.</p>
-    <a href="https://elevates.exlyapp.com/4526b6a9-4a1b-4fdd-8a08-1dc019fd3def?compact=true&init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
-      <span class="discovery-option-ico"><i class="bi bi-person-badge"></i></span>
-      <span>
-        <strong>Individual Professional</strong>
-        <span>Career growth &amp; salary acceleration programs</span>
-      </span>
-      <i class="bi bi-arrow-right ms-auto"></i>
-    </a>
-    <a href="https://elevates.exlyapp.com/75e8ebac-43bc-4faa-86d6-948f4bd4c5da?init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
-      <span class="discovery-option-ico"><i class="bi bi-building"></i></span>
-      <span>
-        <strong>Business Owner</strong>
-        <span>Team enablement &amp; business growth consulting</span>
-      </span>
-      <i class="bi bi-arrow-right ms-auto"></i>
-    </a>
   </div>
 </div>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // ---- Discovery booking modal (desktop) ----
-  const discoveryModal = document.getElementById('discoveryModal');
-  const openDiscoveryModalBtn = document.getElementById('openDiscoveryModalBtn');
-  const discoveryModalClose = document.getElementById('discoveryModalClose');
-
-  function openDiscoveryModal(){
-    if(!discoveryModal) return;
-    discoveryModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  function hasVslAccess(){
+    try{ return sessionStorage.getItem('vslFormSubmitted') === '1'; }catch(err){ return false; }
   }
-  function closeDiscoveryModal(){
-    if(!discoveryModal) return;
-    discoveryModal.classList.remove('open');
-    document.body.style.overflow = '';
+  function goToVslPage(){
+    window.location.href = 'vsl.html';
   }
-  if(openDiscoveryModalBtn){
-    openDiscoveryModalBtn.addEventListener('click', openDiscoveryModal);
-  }
-  if(discoveryModalClose){
-    discoveryModalClose.addEventListener('click', closeDiscoveryModal);
-  }
-  if(discoveryModal){
-    discoveryModal.addEventListener('click', function(e){
-      if(e.target === discoveryModal) closeDiscoveryModal();
-    });
-  }
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeDiscoveryModal();
-  });
 
   // ---- Input filled-state highlight ----
   document.querySelectorAll('#vslAccessForm input.m-input, #vslAccessForm select.m-input').forEach(function(el){
@@ -880,91 +738,11 @@
     el.addEventListener('blur', check);
   });
 
-  // ---- Video player ----
-  const VSL_VIDEO_SRC = new URL('landiing-page-video/landing-video.mp4', window.location.href).href;
-  const VSL_POSTER_SRC = new URL('landing-page-img/video.png', window.location.href).href;
-
-  function playVideo(fromUserGesture){
-    let mount = document.getElementById('vslPlayerMount');
-    const stageBtn = document.getElementById('vslStage');
-
-    if(!mount){
-      mount = document.createElement('div');
-      mount.id = 'vslPlayerMount';
-      mount.className = 'vsl-stage';
-      mount.style.cssText = 'position:relative;aspect-ratio:16/9;background:#000';
-
-      const vid = document.createElement('video');
-      vid.id = 'vslVideo';
-      vid.style.cssText = 'width:100%;height:100%;display:block;object-fit:contain;background:#000';
-      vid.controls = true;
-      vid.playsInline = true;
-      vid.preload = 'auto';
-      vid.setAttribute('playsinline', '');
-      vid.setAttribute('webkit-playsinline', '');
-      vid.poster = VSL_POSTER_SRC;
-      vid.src = VSL_VIDEO_SRC;
-
-      mount.appendChild(vid);
-
-      if(stageBtn){
-        stageBtn.parentElement.replaceChild(mount, stageBtn);
-      }else{
-        const vslBox = document.querySelector('#vsl .vsl');
-        const vslFoot = vslBox && vslBox.querySelector('.vsl-foot');
-        if(vslBox && vslFoot){
-          vslBox.insertBefore(mount, vslFoot);
-        }else{
-          return;
-        }
-      }
-    }
-
-    const vid = document.getElementById('vslVideo');
-    if(!vid) return;
-
-    mount.scrollIntoView({behavior:'smooth', block:'center'});
-
-    const startPlayback = function(){
-      if(fromUserGesture){
-        vid.muted = false;
-      }else{
-        vid.muted = true;
-      }
-      const playAttempt = vid.play();
-      if(playAttempt && typeof playAttempt.catch === 'function'){
-        playAttempt.catch(function(){
-          vid.muted = true;
-          vid.play().catch(function(){});
-        });
-      }
-    };
-
-    if(vid.readyState >= 2){
-      startPlayback();
-    }else{
-      vid.addEventListener('loadeddata', startPlayback, {once:true});
-      vid.load();
-    }
-  }
-
-  // Original play button still works
-  const vslStageBtn = document.getElementById('vslStage');
-  if(vslStageBtn){
-    vslStageBtn.addEventListener('click',function(e){
-      e.preventDefault();
-      try{ if(sessionStorage.getItem('vslFormSubmitted')==='1'){ playVideo(true); return; } }catch(err){}
-      openVslModal();
-    });
-  }
-
   // ---- Modal ----
   const vslModal = document.getElementById('vslModal');
   const vslForm  = document.getElementById('vslAccessForm');
   const formWrap = document.getElementById('vslFormWrap');
-  const vslThanks= document.getElementById('vslThanks');
   const formError= document.getElementById('formError');
-  let countdownInterval;
 
   function openVslModal(){
     vslModal.classList.add('open');
@@ -978,18 +756,26 @@
   function closeVslModal(){
     vslModal.classList.remove('open');
     document.body.style.overflow='';
-    clearInterval(countdownInterval);
+  }
+
+  const vslStageBtn = document.getElementById('vslStage');
+  if(vslStageBtn){
+    vslStageBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      if(hasVslAccess()){ goToVslPage(); return; }
+      openVslModal();
+    });
   }
 
   // Open triggers
   document.getElementById('openVslFormBtn').addEventListener('click',function(e){
     e.preventDefault();
-    try{ if(sessionStorage.getItem('vslFormSubmitted')==='1'){ playVideo(true); return; } }catch(err){}
+    if(hasVslAccess()){ goToVslPage(); return; }
     openVslModal();
   });
   document.getElementById('finalCtaBtn').addEventListener('click',function(e){
     e.preventDefault();
-    try{ if(sessionStorage.getItem('vslFormSubmitted')==='1'){ playVideo(true); document.getElementById('vsl').scrollIntoView({behavior:'smooth'}); return; } }catch(err){}
+    if(hasVslAccess()){ goToVslPage(); return; }
     openVslModal();
   });
 
@@ -1007,24 +793,6 @@
       t.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'});
     },350);
   });
-
-  function showVslThankYou(){
-    formError.style.display='none';
-    try{ sessionStorage.setItem('vslFormSubmitted','1'); }catch(err){}
-    formWrap.style.display='none';
-    vslThanks.style.display='block';
-    let count=3;
-    document.getElementById('tyCount').textContent=count;
-    countdownInterval=setInterval(()=>{
-      count--;
-      document.getElementById('tyCount').textContent=count;
-      if(count<=0){
-        clearInterval(countdownInterval);
-        closeVslModal();
-        setTimeout(function(){ playVideo(false); }, 200);
-      }
-    },1000);
-  }
 
   // Form submit
   vslForm.addEventListener('submit',async function(e){
@@ -1072,22 +840,14 @@
         submitBtn.innerHTML=originalBtnHtml;
         return;
       }
-      document.querySelector('#vslThanks h4').textContent="You're all set!";
-      document.querySelector('#vslThanks p').textContent=data.message||'Thank you for registering. Your free 12-minute training is ready.';
-      showVslThankYou();
+      try{ sessionStorage.setItem('vslFormSubmitted','1'); }catch(err){}
+      window.location.href = 'vsl.html';
     }catch(err){
       formError.style.display='block';
       formError.textContent='Unable to submit. Please check your connection and try again.';
       submitBtn.disabled=false;
       submitBtn.innerHTML=originalBtnHtml;
     }
-  });
-
-  // Watch now button in thank you
-  document.getElementById('vslWatchNow').addEventListener('click',function(){
-    clearInterval(countdownInterval);
-    closeVslModal();
-    setTimeout(function(){ playVideo(true); }, 200);
   });
 
   // ---- Testimonials carousel (same reviews as double-your-salary.php) ----
