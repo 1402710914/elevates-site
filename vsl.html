@@ -65,35 +65,6 @@
     box-shadow:0 12px 32px -14px rgba(124,77,255,.45);cursor:pointer;
   }
   .btn-vsl-book:hover{color:#fff;background:linear-gradient(135deg,#8f6bff,#b88cff);transform:translateY(-2px)}
-  #discoveryModal{
-    display:none;position:fixed;inset:0;z-index:10050;background:rgba(8,6,18,.82);
-    align-items:center;justify-content:center;padding:1rem;
-  }
-  #discoveryModal.open{display:flex}
-  .discovery-modal-card{
-    width:min(480px,100%);background:linear-gradient(180deg,#2c2348,var(--card));
-    border:1px solid var(--border);border-radius:1rem;padding:1.5rem;position:relative;
-    box-shadow:0 30px 80px -20px rgba(124,77,255,.5);
-  }
-  .discovery-modal-card h3{font-family:'Sora';font-size:1.35rem;margin:0 0 .35rem}
-  .discovery-modal-card p{color:var(--muted);font-size:.9rem;margin:0 0 1.25rem}
-  .discovery-option{
-    display:flex;align-items:center;gap:.85rem;padding:.95rem 1rem;border-radius:.85rem;
-    border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);
-    text-decoration:none;margin-bottom:.65rem;transition:border-color .2s,background .2s;
-  }
-  .discovery-option:hover{border-color:rgba(245,196,81,.45);background:rgba(124,77,255,.12);color:var(--text)}
-  .discovery-option-ico{
-    width:42px;height:42px;border-radius:.65rem;background:rgba(124,77,255,.22);color:var(--gold);
-    display:grid;place-items:center;flex-shrink:0;font-size:1.1rem;
-  }
-  .discovery-option strong{display:block;font-size:.95rem;font-family:'Sora'}
-  .discovery-option span{display:block;font-size:.78rem;color:var(--muted);margin-top:.15rem}
-  .discovery-modal-x{
-    position:absolute;top:.75rem;right:.75rem;width:36px;height:36px;border-radius:50%;
-    border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);
-    display:grid;place-items:center;cursor:pointer;
-  }
   @media(max-width:575px){
     .vsl-page-ctas{flex-direction:column}
     .vsl-page{padding:1.5rem 0 3rem}
@@ -132,36 +103,12 @@
       <!-- <a href="https://wa.me/919311799336?text=Hi%20Elevates%2C%20I%20watched%20the%20free%20training%20and%20would%20like%20to%20connect." class="btn-vsl-wa" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-whatsapp"></i> Connect on WhatsApp Now
       </a> -->
-      <button type="button" class="btn-vsl-book" id="openDiscoveryModalBtn">
+      <a href="https://calendly.com/purshottam-elevates/30min" class="btn-vsl-book" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-calendar-check"></i> Book a Discovery Call
-      </button>
+      </a>
     </div>
   </div>
 </main>
-
-<div id="discoveryModal" role="dialog" aria-modal="true" aria-labelledby="discoveryModalTitle">
-  <div class="discovery-modal-card">
-    <button type="button" class="discovery-modal-x" id="discoveryModalClose" aria-label="Close">×</button>
-    <h3 id="discoveryModalTitle">Book a Discovery Call</h3>
-    <p>Choose your path and pick an available time slot.</p>
-    <a href="https://elevates.exlyapp.com/4526b6a9-4a1b-4fdd-8a08-1dc019fd3def?compact=true&init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
-      <span class="discovery-option-ico"><i class="bi bi-person-badge"></i></span>
-      <span>
-        <strong>Individual Professional</strong>
-        <span>Career growth &amp; salary acceleration programs</span>
-      </span>
-      <i class="bi bi-arrow-right ms-auto"></i>
-    </a>
-    <a href="https://elevates.exlyapp.com/75e8ebac-43bc-4faa-86d6-948f4bd4c5da?init_booking=true" target="_blank" rel="noopener noreferrer" class="discovery-option">
-      <span class="discovery-option-ico"><i class="bi bi-building"></i></span>
-      <span>
-        <strong>Business Owner</strong>
-        <span>Team enablement &amp; business growth consulting</span>
-      </span>
-      <i class="bi bi-arrow-right ms-auto"></i>
-    </a>
-  </div>
-</div>
 
 <script>
   (function(){
@@ -191,27 +138,6 @@
         vid.addEventListener('loadeddata', startPlayback, {once:true});
       }
     }
-
-    const discoveryModal = document.getElementById('discoveryModal');
-    const openDiscoveryModalBtn = document.getElementById('openDiscoveryModalBtn');
-    const discoveryModalClose = document.getElementById('discoveryModalClose');
-
-    function openDiscoveryModal(){
-      discoveryModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeDiscoveryModal(){
-      discoveryModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    openDiscoveryModalBtn.addEventListener('click', openDiscoveryModal);
-    discoveryModalClose.addEventListener('click', closeDiscoveryModal);
-    discoveryModal.addEventListener('click', function(e){
-      if(e.target === discoveryModal) closeDiscoveryModal();
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') closeDiscoveryModal();
-    });
   })();
 </script>
 </body>
