@@ -724,7 +724,8 @@
     try{ return sessionStorage.getItem('vslFormSubmitted') === '1'; }catch(err){ return false; }
   }
   function goToVslPage(){
-    window.location.href = 'vsl.html';
+    try{ sessionStorage.setItem('vslFormSubmitted','1'); }catch(err){}
+    window.location.replace('vsl.html?submitted=1');
   }
 
   // ---- Input filled-state highlight ----
@@ -841,7 +842,7 @@
         return;
       }
       try{ sessionStorage.setItem('vslFormSubmitted','1'); }catch(err){}
-      window.location.href = 'vsl.html';
+      window.location.replace('vsl.html?submitted=1');
     }catch(err){
       formError.style.display='block';
       formError.textContent='Unable to submit. Please check your connection and try again.';

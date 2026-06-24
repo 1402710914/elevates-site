@@ -115,6 +115,15 @@
     function hasVslAccess(){
       try{ return sessionStorage.getItem('vslFormSubmitted') === '1'; }catch(err){ return false; }
     }
+
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('submitted') === '1'){
+      try{ sessionStorage.setItem('vslFormSubmitted','1'); }catch(err){}
+      if(window.history && window.history.replaceState){
+        window.history.replaceState(null, '', 'vsl.html');
+      }
+    }
+
     if(!hasVslAccess()){
       window.location.replace('new-landing.html');
       return;
