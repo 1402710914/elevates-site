@@ -851,39 +851,45 @@
     }
   });
 
-  // ---- Testimonials carousel (same reviews as double-your-salary.php) ----
-  const testimonials=[
-    {q:"With the help of Elevates, I got the opportunity to start my professional journey at Ternate Techsol Private Limited. The program helped me grow from an underconfident fresher into a corporate-ready professional by simplifying business concepts and strengthening my communication and client-handling skills. The real-world guidance and continuous support made a real difference in my confidence and readiness for the role.",n:"ABHISHEK BHARTIYA",i:"review-img/1.jpg"},
-    {q:"Elevates has refined my consultative approach, helping me understand client needs better, communicate solutions clearly, and build lasting relationships.",n:"SAMRA ALI",i:"review-img/2.jpg"},
-    {q:"ELEVATES helped me transition from campus learning to real corporate execution through its Corporate Success Program. The program provided practical exposure, strengthened my professional communication, and prepared me for real client facing responsibilities. With the right guidance and structured Mentoring, I became industry ready and confidently began my professional journey at Alpha1 IT Solutions & Consulting.",n:"Akansha Tyagi",i:"review-img/3.jpg"},
-    {q:"ELEVATES helped me strengthen the skills that matter most in a professional environment. The program gave me better clarity on how to present my capabilities, communicate with confidence, and handle workplace conversations more effectively. With continuous guidance and feedback, I was able to refine my approach, improve my overall execution, and feel more confident in how I show up professionally. This learning experience played an important role in helping me move forward and secure my opportunity at Alpha1 IT.",n:"Gulsaz",i:"review-img/4.jpg"},
-    {q:"When I became part of ELEVATES Corporate Success Program, I lacked clarity and had little idea how the corporate world worked. The mentors guided me step by step from understanding IT industry dynamics to developing client management skills. Their continuous support and practice sessions gave me the confidence to express myself professionally and perform better in every interaction.",n:"SHUBHAM YADAV",i:"review-img/5.jpg"},
-    {q:"With ELEVATES' Corporate Success Program, I received the right guidance, practical exposure, and mentoring that helped me understand how the professional world actually works. The Mentoring strengthened my communication skills and gave me the confidence to step into real corporate environments. This journey truly made me industry ready and helped me begin my professional career at Alpha1 IT Solutions & Consulting.",n:"Neha Kumari",i:"review-img/6.jpg"},
-    {q:"When I joined Elevates, I was a fresher trying to find my footing in the industry. The personalized guidance and mentorship I received were crucial in preparing me for real-world challenges. Elevates helped me develop relevant skills and gave me the confidence to navigate the job market successfully. I'm grateful for the practical, focused coaching that made all the difference in launching my career.",n:"RUDRAKSH BOHRA",i:"review-img/7.jpg"},
-    {q:"Our association with ELEVATES helped us onboard candidates who are confident, communicative, and truly corporate-ready. Their structured mentoring and strong focus on professional mindset clearly reflect in how candidates adapt, collaborate, and perform from day one. ELEVATES builds talent that aligns well with real industry expectations.",n:"BHAVIT DAVE",i:"review-img/8.jpg"},
-    {q:"Before Elevates, I struggled to communicate my ideas clearly during client meetings. Their program helped me sharpen my communication, manage clients more effectively, and close bigger deals with confidence",n:"MONIS KHAN",i:"review-img/9.jpg"},
-    {q:"Before joining Elevates program, I wasn't able to realise my real potential. Today I am aware of my real strengths and I feel more confident. This Program was a turning point in my journey. It didn't just sharpen my understanding of professional concepts- it reshaped how I see myself. I've developed a confident, growth-oriented mindset. I now approach challenges with clarity and emotional intelligence. I've discovered a career path that aligns with my strengths and aspirations. This wasn't just a learning experience, it was a transformation. Grateful to the mentors and community that made it possible.",n:"KARAN TICKOO",i:"review-img/10.jpg"},
-    {q:"When I started my journey with Elevates, I didn't expect it to change so much for me. It wasn't just about learning new skills, it was about finding my voice again. Today, I feel more confident speaking, connecting with people, and handling conversations with ease. The best part? It all happened through small, simple steps that made a real difference. Grateful to the Elevates team for helping me grow, both personally and professionally.",n:"PARVESH KUMAR",i:"review-img/11.jpg"},
-    {q:"My experience with Elevates has been incredibly rewarding. Their guidance during my interview preparation helped me gain the confidence and clarity I needed. The mock sessions were a game changer; they helped me identify weak areas, refine my responses, and improve my communication skills. I appreciate the personalized support from the mentors who understood my goals and guided me every step of the way. With their help, I enhanced my skills and achieved a 60% salary increment in my new role. A big thank you to the entire ELEVATES team for helping me grow and believe in my potential. This journey wouldn't have been the same without you.",n:"DURGA SARAN",i:"review-img/12.jpg"},
-    {q:"This program was instrumental in my career growth, providing me with the tools and expertise to take on more challenging roles and responsibilities.",n:"Twinkle Bagchi",i:"review-img/13.jpg"},
-    {q:"Looking back at my journey, learning with ELEVATES has been one of the most impactful decisions in my career. Their mock sessions and interview preparation helped me sharpen my skills and gain real clarity about my professional direction. Their encouragement built my confidence and helped me take practical steps toward meaningful growth. With ELEVATES support, I not only enhanced my skills but also secured an 80% salary hike in my new role. I'm genuinely grateful to the team for guiding me toward this milestone with clarity and confidence.",n:"VIVEK THAKUR",i:"review-img/14.jpg"}
-  ];
+  // ---- Testimonials carousel (loaded from DB) ----
   const starHtml='<i class="bi bi-star-fill"></i>'.repeat(5);
-  document.getElementById('testimonialsSlides').innerHTML=testimonials.map(t=>`
+  const placeholderImg='review-img/placeholder.svg';
+
+  async function loadTestimonialsCarousel(){
+    const slidesEl=document.getElementById('testimonialsSlides');
+    if(!slidesEl) return null;
+
+    try{
+      const res=await fetch('testimonials_api.php');
+      const data=await res.json();
+      if(!res.ok||!data.ok||!Array.isArray(data.testimonials)) throw new Error('bad response');
+
+      slidesEl.innerHTML=data.testimonials.map(t=>{
+        const company=t.company?`<p class="author-title">${t.company}</p>`:'';
+        const img=t.photo_url||placeholderImg;
+        return `
     <div class="swiper-slide">
       <div class="testimonial-card">
-        <img src="${t.i}" alt="${t.n}" class="testimonial-image" loading="lazy">
+        <img src="${img}" alt="${t.name}" class="testimonial-image" loading="lazy" onerror="this.src='${placeholderImg}'">
         <div class="testimonial-overlay">
           <div class="testimonial-content">
             <div class="testimonial-rating">${starHtml}</div>
-            <p class="testimonial-text">"${t.q}"</p>
+            <p class="testimonial-text">"${t.text}"</p>
             <div class="testimonial-author">
-              <p class="author-name">${t.n}</p>
+              <p class="author-name">${t.name}</p>
+              ${company}
             </div>
           </div>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+      }).join('');
+      return data.testimonials.length;
+    }catch(err){
+      slidesEl.innerHTML=`<div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-overlay"><div class="testimonial-content"><p class="testimonial-text">Unable to load testimonials right now.</p></div></div></div></div>`;
+      return 0;
+    }
+  }
 
   // ---- FAQ ----
   const faqs=[
@@ -907,18 +913,20 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
 <script>
-  new Swiper('.testimonials-swiper', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: { delay: 4000, disableOnInteraction: false },
-    pagination: { el: '.testimonials-pagination', clickable: true, dynamicBullets: false },
-    navigation: { nextEl: '.testimonials-swiper-next', prevEl: '.testimonials-swiper-prev' },
-    breakpoints: {
-      320: { slidesPerView: 1, spaceBetween: 20 },
-      768: { slidesPerView: 2, spaceBetween: 25 },
-      1024: { slidesPerView: 3, spaceBetween: 30 }
-    }
+  loadTestimonialsCarousel().then(function(){
+    new Swiper('.testimonials-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: '.testimonials-pagination', clickable: true, dynamicBullets: false },
+      navigation: { nextEl: '.testimonials-swiper-next', prevEl: '.testimonials-swiper-prev' },
+      breakpoints: {
+        320: { slidesPerView: 1, spaceBetween: 20 },
+        768: { slidesPerView: 2, spaceBetween: 25 },
+        1024: { slidesPerView: 3, spaceBetween: 30 }
+      }
+    });
   });
 </script>
 </body>

@@ -1,21 +1,11 @@
 <?php
 include 'header.php';
 include 'db.php';
+require_once __DIR__ . '/includes/testimonial_helpers.php';
 
 // Helper: fetch testimonials by category
 function get_testimonials_by_category(mysqli $mysqli, string $category): array {
-    $items = [];
-    $stmt = $mysqli->prepare("SELECT * FROM testimonials WHERE status = 'published' AND category = ? ORDER BY created_at DESC");
-    if ($stmt) {
-        $stmt->bind_param('s', $category);
-        $stmt->execute();
-        $res = $stmt->get_result();
-        while ($row = $res->fetch_assoc()) {
-            $items[] = $row;
-        }
-        $stmt->close();
-    }
-    return $items;
+    return get_published_testimonials($mysqli, $category);
 }
 
 $professionals = get_testimonials_by_category($mysqli, 'b2c');
@@ -404,17 +394,14 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
                 <?php if (!empty($professionals)): ?>
                     <?php foreach ($professionals as $t): ?>
                         <?php
-                        $img = trim($t['photo_url'] ?? '');
-                        if ($img === '') {
-                            $img = 'review-img/1.jpg';
-                        }
+                        $img = testimonial_photo_src($t['name'] ?? '', $t['photo_url'] ?? '');
                         $rating = (int)($t['rating'] ?? 5);
                         if ($rating < 1) $rating = 1;
                         if ($rating > 5) $rating = 5;
                         ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="testimonial-card">
-                                <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($t['name'] ?? 'Testimonial') ?>" class="testimonial-image">
+                                <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($t['name'] ?? 'Testimonial') ?>" class="testimonial-image" loading="lazy" onerror="this.src='review-img/placeholder.svg'">
                                 <div class="testimonial-overlay">
                                     <div class="testimonial-content">
                                         <div class="testimonial-rating">
@@ -454,17 +441,14 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
                 <?php if (!empty($businesses)): ?>
                     <?php foreach ($businesses as $t): ?>
                         <?php
-                        $img = trim($t['photo_url'] ?? '');
-                        if ($img === '') {
-                            $img = 'review-img/8.jpg';
-                        }
+                        $img = testimonial_photo_src($t['name'] ?? '', $t['photo_url'] ?? '');
                         $rating = (int)($t['rating'] ?? 5);
                         if ($rating < 1) $rating = 1;
                         if ($rating > 5) $rating = 5;
                         ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="testimonial-card">
-                                <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($t['name'] ?? 'Testimonial') ?>" class="testimonial-image">
+                                <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($t['name'] ?? 'Testimonial') ?>" class="testimonial-image" loading="lazy" onerror="this.src='review-img/placeholder.svg'">
                                 <div class="testimonial-overlay">
                                     <div class="testimonial-content">
                                         <div class="testimonial-rating">

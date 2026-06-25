@@ -1,0 +1,32 @@
+[
+  {
+    "code": "P1",
+    "name": "Technical Freshers",
+    "questions": 200,
+    "title": "Technical Freshers"
+  },
+  {
+    "code": "P2",
+    "name": "Management Freshers",
+    "questions": 200,
+    "title": "Management Freshers"
+  },
+  {
+    "code": "P3",
+    "name": "Working Professionals",
+    "questions": 200,
+    "title": "Working Professionals"
+  },
+  {
+    "code": "P4",
+    "name": "Corporate Professionals",
+    "questions": 200,
+    "title": "Corporate Professionals"
+  },
+  {
+    "code": "P5",
+    "name": "Senior Executives",
+    "questions": 200,
+    "title": "Senior Executives"
+  }
+]

@@ -41,6 +41,7 @@ $result = $mysqli->query('
 ');
 
 $admin_name = htmlspecialchars($_SESSION['admin_username'] ?? 'Admin');
+$adminNavActive = 'enquiries';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,13 +106,9 @@ $admin_name = htmlspecialchars($_SESSION['admin_username'] ?? 'Admin');
                 <div class="brand-sublabel">Admin Panel</div>
             </div>
         </div>
-        <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="admin_dashboard.php"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="enquiries.php"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Enquiries</a></li>
-            <li class="nav-item"><a class="nav-link active" href="landing_vsl_enquiries.php"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>New Landing Enquiries</a></li>
-            <li class="nav-item"><a class="nav-link danger" href="logout.php"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Logout</a></li>
-        </ul>
-        <div class="sidebar-footer">
+        <?php include __DIR__ . '/includes/sidebar_nav.php'; ?>
+
+<div class="sidebar-footer">
             <div class="user-pill">
                 <div class="avatar"><?= strtoupper(substr($admin_name, 0, 2)) ?></div>
                 <div>

@@ -52,7 +52,7 @@
                     <h5 class="footer-heading">For Individuals</h5>
                     <ul class="footer-links">
                         <li><a href="job-placement-assistance.php">Job & Placement Assistance</a></li>
-                        <li><a href="ai-based-assessment.php">AI Based Assessment (Skill Gap Analysis)</a></li>
+                        <li><a href="ai-assessment-quiz.php">AI Based Assessment (Skill Gap Analysis)</a></li>
                         <li><a href="success-accelerator-program.php">Success Accelerator Program</a></li>
                         <li><a href="career-accelerator-program.php">Career Accelerator Program</a></li>
                         <!-- <li><a href="dreamchazer-build-your-dream-business.php">DreamChazer (Build Your Dream Business)</a></li> -->

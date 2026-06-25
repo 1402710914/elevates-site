@@ -1,0 +1,143 @@
+{
+  "header": "ELEVATES   |   PROFESSIONAL GROWTH ASSESSMENT",
+  "persona": "PERSONA 03",
+  "title": "Working Professionals",
+  "name": "Working Professionals",
+  "context_line": "Experience  ·  3–15 years        Context  ·  B2C context        Difficulty  ·  Intermediate–Advanced",
+  "tagline": "A 200-item, multi-format, psychometrically structured assessment covering five pillars of professional growth.",
+  "pillars": [
+    {
+      "num": "01",
+      "name": "Value Selling Mastery"
+    },
+    {
+      "num": "02",
+      "name": "Leadership & Influence"
+    },
+    {
+      "num": "03",
+      "name": "Personality & Communication"
+    },
+    {
+      "num": "04",
+      "name": "Mental Wellness & Resilience"
+    },
+    {
+      "num": "05",
+      "name": "Technology & Digital Fluency"
+    }
+  ],
+  "about": "This 200-item assessment is designed for mid-career professionals (3-15 years of experience) working in B2C contexts. Items reflect the complexity of leading teams, managing accounts, navigating mid-career identity, and operating in a digital-first commercial environment. Calibration is significantly more demanding than the fresher assessments - distractors are subtler and scenarios closer to lived complexity.",
+  "how_to": "Six psychometrically distinct item types are used. For self-concept items, there is no 'right' answer - they measure your perception of yourself. For situational judgment items, all options reflect things real professionals do; choose what you would genuinely do, not what sounds best.",
+  "time_required": "75-90 minutes. May be split across two sittings.",
+  "pillar_weights": [
+    {
+      "num": "01",
+      "name": "Value Selling Mastery",
+      "items": 45,
+      "weight": "22%",
+      "weight_pct": 22.0
+    },
+    {
+      "num": "02",
+      "name": "Leadership & Influence",
+      "items": 45,
+      "weight": "22%",
+      "weight_pct": 22.0
+    },
+    {
+      "num": "03",
+      "name": "Personality & Communication",
+      "items": 40,
+      "weight": "20%",
+      "weight_pct": 20.0
+    },
+    {
+      "num": "04",
+      "name": "Mental Wellness & Resilience",
+      "items": 35,
+      "weight": "18%",
+      "weight_pct": 18.0
+    },
+    {
+      "num": "05",
+      "name": "Technology & Digital Fluency",
+      "items": 35,
+      "weight": "18%",
+      "weight_pct": 18.0
+    }
+  ],
+  "scoring_steps": [
+    "STEP 1  Compute the raw score for each pillar by summing item-level scores using the Answer Key. Knowledge items contribute 0–1; SJT items contribute 0–3; Self-concept and behavioral items contribute 1–5.",
+    "STEP 2  Convert each pillar's raw score to a percentage of its maximum possible score: Pillar % = (raw / max) × 100. Round to one decimal place.",
+    "STEP 3  Compute the Composite Score as the weighted average of pillar percentages: Composite = Σ (Pillar % × Pillar Weight) ÷ 100.",
+    "STEP 4  Map both pillar percentages and composite score to the five proficiency bands in section 4 to derive the descriptive level and recommended interventions."
+  ],
+  "proficiency_bands": [
+    {
+      "min": 85,
+      "max": 100,
+      "title": "ADVANCED",
+      "descriptor": "Demonstrates sustained mastery. Ready for senior responsibility, mentoring others, and leading complex initiatives."
+    },
+    {
+      "min": 70,
+      "max": 84,
+      "title": "PROFICIENT",
+      "descriptor": "Reliably effective in most situations. Benefits from stretch assignments and exposure to higher-complexity challenges."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": "COMPETENT",
+      "descriptor": "Solid foundation with room to deepen. Coaching, applied practice, and structured feedback will accelerate development."
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": "EMERGING",
+      "descriptor": "Foundational understanding but inconsistent application. Needs targeted skill-building and supervised practice."
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": "DEVELOPING",
+      "descriptor": "Significant gap. Requires intensive learning, mentorship, and behavioral coaching before independent responsibility is appropriate."
+    }
+  ],
+  "item_types": [
+    {
+      "code": "K",
+      "name": "Knowledge MCQ",
+      "hint": "One correct answer. Choose the best response based on your knowledge."
+    },
+    {
+      "code": "SJT",
+      "name": "Situational Judgment",
+      "hint": "All options are plausible. Choose what you would most likely do in real life."
+    },
+    {
+      "code": "SCI",
+      "name": "Self-Concept Inventory",
+      "hint": "No right or wrong answer — answer honestly about yourself."
+    },
+    {
+      "code": "SCI-R",
+      "name": "Reverse-Coded Self-Concept",
+      "hint": "No right or wrong answer — answer honestly (some items are reverse-coded)."
+    },
+    {
+      "code": "BEH",
+      "name": "Behavioral Frequency",
+      "hint": "Rate how often this applies to you (Never → Always)."
+    },
+    {
+      "code": "FC",
+      "name": "Forced Choice",
+      "hint": "Select the BEST and WORST option from the choices given."
+    }
+  ],
+  "code": "P3",
+  "sort_order": 3,
+  "slug": "working-professionals"
+}

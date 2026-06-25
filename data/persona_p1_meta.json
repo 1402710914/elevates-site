@@ -1,0 +1,143 @@
+{
+  "header": "ELEVATES   |   PROFESSIONAL GROWTH ASSESSMENT",
+  "persona": "PERSONA 01",
+  "title": "Technical Freshers",
+  "name": "Technical Freshers",
+  "context_line": "Experience  ·  0 years        Context  ·  B2C focus        Difficulty  ·  Foundational",
+  "tagline": "A 200-item, multi-format, psychometrically structured assessment covering five pillars of professional growth.",
+  "pillars": [
+    {
+      "num": "01",
+      "name": "Value Selling Mastery"
+    },
+    {
+      "num": "02",
+      "name": "Leadership & Influence"
+    },
+    {
+      "num": "03",
+      "name": "Personality & Communication"
+    },
+    {
+      "num": "04",
+      "name": "Mental Wellness & Resilience"
+    },
+    {
+      "num": "05",
+      "name": "Technology & Digital Fluency"
+    }
+  ],
+  "about": "This 200-item assessment has been designed for technical graduates (BTech, BCA, MCA) who are about to enter the workforce or are in their first 6 months of professional life. Items are calibrated to the foundational professional competencies a technically-trained fresh graduate must develop to transition into commercial work effectively.\nWhy this assessment is different\nUnlike single-format knowledge tests, this instrument uses six psychometrically distinct item types — Knowledge MCQs, Situational Judgment items with weighted scoring, Self-Concept Inventory Likert items, Reverse-Coded items (which detect response-bias), Behavioral Frequency items, and Forced-Choice items. This multi-format design follows the same principles used by international assessment publishers (e.g., SHL, Kenexa/IBM, CAPP, SOVA) and reflects best practice from peer-reviewed research on Situational Judgment Tests (Whetzel, Sullivan & McCloy, 2020) and competency-based rubrics.",
+  "how_to": "Answer every item honestly. Self-concept items have no 'right' answer — they measure your perception of yourself, which is most useful when truthful. Situational judgment items present realistic scenarios where multiple responses are plausible — choose the response you would most likely give in real life, not the response you think is 'correct'.",
+  "time_required": "75–90 minutes. May be split across two sittings.",
+  "pillar_weights": [
+    {
+      "num": "01",
+      "name": "Value Selling Mastery",
+      "items": 40,
+      "weight": "18%",
+      "weight_pct": 18.0
+    },
+    {
+      "num": "02",
+      "name": "Leadership & Influence",
+      "items": 40,
+      "weight": "18%",
+      "weight_pct": 18.0
+    },
+    {
+      "num": "03",
+      "name": "Personality & Communication",
+      "items": 50,
+      "weight": "22%",
+      "weight_pct": 22.0
+    },
+    {
+      "num": "04",
+      "name": "Mental Wellness & Resilience",
+      "items": 35,
+      "weight": "17%",
+      "weight_pct": 17.0
+    },
+    {
+      "num": "05",
+      "name": "Technology & Digital Fluency",
+      "items": 35,
+      "weight": "25%",
+      "weight_pct": 25.0
+    }
+  ],
+  "scoring_steps": [
+    "STEP 1  Compute the raw score for each pillar by summing item-level scores using the Answer Key. Knowledge items contribute 0–1; SJT items contribute 0–3; Self-concept and behavioral items contribute 1–5.",
+    "STEP 2  Convert each pillar's raw score to a percentage of its maximum possible score: Pillar % = (raw / max) × 100. Round to one decimal place.",
+    "STEP 3  Compute the Composite Score as the weighted average of pillar percentages: Composite = Σ (Pillar % × Pillar Weight) ÷ 100.",
+    "STEP 4  Map both pillar percentages and composite score to the five proficiency bands in section 4 to derive the descriptive level and recommended interventions."
+  ],
+  "proficiency_bands": [
+    {
+      "min": 85,
+      "max": 100,
+      "title": "ADVANCED",
+      "descriptor": "Demonstrates sustained mastery. Ready for senior responsibility, mentoring others, and leading complex initiatives."
+    },
+    {
+      "min": 70,
+      "max": 84,
+      "title": "PROFICIENT",
+      "descriptor": "Reliably effective in most situations. Benefits from stretch assignments and exposure to higher-complexity challenges."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": "COMPETENT",
+      "descriptor": "Solid foundation with room to deepen. Coaching, applied practice, and structured feedback will accelerate development."
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": "EMERGING",
+      "descriptor": "Foundational understanding but inconsistent application. Needs targeted skill-building and supervised practice."
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": "DEVELOPING",
+      "descriptor": "Significant gap. Requires intensive learning, mentorship, and behavioral coaching before independent responsibility is appropriate."
+    }
+  ],
+  "item_types": [
+    {
+      "code": "K",
+      "name": "Knowledge MCQ",
+      "hint": "One correct answer. Choose the best response based on your knowledge."
+    },
+    {
+      "code": "SJT",
+      "name": "Situational Judgment",
+      "hint": "All options are plausible. Choose what you would most likely do in real life."
+    },
+    {
+      "code": "SCI",
+      "name": "Self-Concept Inventory",
+      "hint": "No right or wrong answer — answer honestly about yourself."
+    },
+    {
+      "code": "SCI-R",
+      "name": "Reverse-Coded Self-Concept",
+      "hint": "No right or wrong answer — answer honestly (some items are reverse-coded)."
+    },
+    {
+      "code": "BEH",
+      "name": "Behavioral Frequency",
+      "hint": "Rate how often this applies to you (Never → Always)."
+    },
+    {
+      "code": "FC",
+      "name": "Forced Choice",
+      "hint": "Select the BEST and WORST option from the choices given."
+    }
+  ],
+  "code": "P1",
+  "sort_order": 1,
+  "slug": "technical-freshers"
+}
