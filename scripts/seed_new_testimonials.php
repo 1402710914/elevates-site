@@ -7,6 +7,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/mani-sinha.png',
         'text' => 'From confidence building to interview preparation, ELEVATES provided the guidance and support I needed to navigate my layoff and move forward with confidence.',
     ],
     [
@@ -14,6 +15,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/prashant-kumar.png',
         'text' => 'Through ELEVATES, I developed stronger communication, public speaking, and leadership skills that transformed the way I interact with customers and teams.',
     ],
     [
@@ -21,6 +23,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2b',
+        'photo_url' => 'review-img/debashish-maji.png',
         'text' => 'ELEVATES has helped our team strengthen communication, enhance client interactions, and approach every opportunity with greater confidence and professionalism.',
     ],
     [
@@ -28,6 +31,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2b',
+        'photo_url' => 'review-img/rakesh-pandey.png',
         'text' => 'ELEVATES mentorship has played a valuable role in developing professionals who think with clarity, communicate effectively, and deliver greater value to customers.',
     ],
     [
@@ -42,6 +46,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/tarika.png',
         'text' => 'ELEVATES helped me strengthen my communication, build confidence, and approach my professional journey with greater clarity and purpose.',
     ],
     [
@@ -49,6 +54,7 @@ $newTestimonials = [
         'role' => '',
         'company' => 'NetApp',
         'category' => 'b2c',
+        'photo_url' => 'review-img/shubham-mer.png',
         'text' => 'ELEVATES helped me sharpen my professional communication and approach every business conversation with greater clarity and purpose.',
     ],
     [
@@ -56,6 +62,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/priyanka-tisoria.png',
         'text' => 'The mentorship at ELEVATES enhanced my confidence, communication, and ability to build lasting relationships with customers.',
     ],
     [
@@ -63,6 +70,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/mayank-bhatia.png',
         'text' => 'ELEVATES helped me look beyond products and focus on delivering meaningful business value through every customer interaction.',
     ],
     [
@@ -70,6 +78,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/ravi-singh.png',
         'text' => 'The practical insights from ELEVATES helped me build confidence, improve client conversations, and strengthen my professional approach.',
     ],
     [
@@ -77,6 +86,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/subhadip.png',
         'text' => 'ELEVATES gave me a broader business perspective, enabling me to approach customer conversations with greater confidence and strategic thinking.',
     ],
     [
@@ -84,6 +94,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/shubham-pandey.png',
         'text' => 'The mentorship at ELEVATES strengthened my consultative approach, helping me build stronger customer relationships and communicate value more effectively.',
     ],
     [
@@ -91,6 +102,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2c',
+        'photo_url' => 'review-img/prikshit.png',
         'text' => 'ELEVATES helped me communicate technical solutions with greater clarity and confidence, making every customer interaction more impactful.',
     ],
 ];
