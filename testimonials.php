@@ -136,7 +136,7 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0;
+    gap: 20px !important;
     margin-top: 40px;
 }
 
@@ -174,13 +174,7 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
 
 .testimonials-nav-wrapper .testimonials-pagination,
 .testimonials-swiper .testimonials-pagination {
-    position: relative !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    width: auto !important;
+    display: none;
 }
 
 .testimonials-pagination .swiper-pagination-bullet {
