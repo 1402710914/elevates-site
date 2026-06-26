@@ -121,6 +121,16 @@
   .founder-img{border-radius:1rem;border:1px solid var(--border);box-shadow:0 30px 80px -20px rgba(124,77,255,.5);width:100%}
   .founder-glow{position:absolute;inset:-1rem;z-index:-1;border-radius:1.5rem;background:linear-gradient(135deg,rgba(124,77,255,.4),rgba(245,196,81,.3));filter:blur(40px)}
   .badge-gold{background:rgba(245,196,81,.1);border:1px solid rgba(245,196,81,.3);color:var(--gold);border-radius:999px;padding:.3rem .85rem;font-size:.85rem;display:inline-block;margin-right:.4rem;margin-bottom:.4rem}
+  .founder-partners{margin-top:1.75rem;margin-bottom:1.5rem;padding-top:2rem;padding-bottom:1.5rem;border-top:1px solid var(--border)}
+  .founder-partners-label{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem !important}
+  .founder-partners-logos{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+  .founder-partner-logo{
+    flex:1 1 120px;max-width:150px;min-height:72px;background:#fff;border-radius:12px;
+    padding:12px 16px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.08)
+  }
+  .founder-partner-logo img{max-width:100%;max-height:48px;width:auto;height:auto;object-fit:contain;display:block}
+  @media (max-width:576px){.founder-partner-logo{flex:1 1 calc(50% - .5rem);max-width:none}}
   .faq-item{background:var(--card);border:1px solid var(--border);border-radius:1rem;overflow:hidden;margin-bottom:.75rem;transition:border-color .2s}
   .faq-item:hover{border-color:rgba(245,196,81,.3)}
   .faq-q{width:100%;background:transparent;border:none;color:var(--text);text-align:left;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 1.5rem;font-family:'Sora';font-weight:600;font-size:1rem}
@@ -406,7 +416,9 @@
     color:rgba(255,255,255,.98);text-shadow:0 2px 6px rgba(0,0,0,.5);line-height:1.7;
   }
   .testimonial-author{border-top:1px solid rgba(255,255,255,.3);padding-top:10px}
-  .author-name{color:#fff;font-weight:700;font-size:14px;margin:0}
+  .author-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .author-name{color:#fff;font-weight:700;font-size:14px;margin:0;flex:1;min-width:0}
+  .author-title{color:rgba(255,255,255,.75);font-size:11px;margin:2px 0 0;text-align:right;flex-shrink:0;max-width:48%;line-height:1.35}
   @media(max-width:767px){
     .testimonial-card{height:500px}
     .testimonials-wrapper{padding:0}
@@ -456,13 +468,7 @@
           <div class="vsl-glow"></div>
           <div class="vsl">
             <div class="vsl-top">
-              <div class="vsl-dots">
-                <span style="background:rgba(239,68,68,.7)"></span>
-                <span style="background:rgba(245,196,81,.7)"></span>
-                <span style="background:rgba(124,77,255,.7)"></span>
-              </div>
-              <span class="fw-medium">FREE TRAINING · 12 min</span>
-              <span><i class="bi bi-clock"></i> Watch now</span>
+              <span class="fw-medium w-100 text-center">100 Job Assistance</span>
             </div>
             <button class="vsl-stage" id="vslStage" aria-label="Play training video">
               <img src="landing-page-img/video.png" alt="Why 9 of 10 Professionals Stay Stuck Under ₹15 LPA — And the 3-Shift Fix" class="vsl-thumbnail" loading="eager">
@@ -593,8 +599,18 @@
         <span class="eyebrow">Meet Your Mentor</span>
         <h2 class="mt-2" style="font-size:clamp(1.8rem,4vw,3rem)">Purshottam Nigam</h2>
         <p class="text-muted-2 mt-2" style="font-size:1.05rem">Author of <em>"Layoff: Disaster or Opportunity? — A Practical Guide to Becoming Employee of the Year."</em></p>
-        <p class="mt-3" style="line-height:1.7">After two decades inside India's IT systems-integrator ecosystem — working with the exact companies you work for today — Purshottam built ELEVATES to do one thing: take mid-career IT sales &amp; pre-sales professionals from <span class="text-gold">invisible to invaluable</span> in 6 months. No theory. No fluff. A repeatable system that has helped hundreds double their income and survive every layoff cycle since.</p>
+        <p class="mt-3" style="line-height:1.7">After spending two decades inside India's OEMs, IT systems-integrator and IT Distributor ecosystem, working with the same companies you work for today, I built ELEVATES with one clear mission: to help mid-career IT sales and pre-sales professionals go from <span class="text-gold">invisible to invaluable</span> in just six months.</p>
+        <p class="mt-3" style="line-height:1.7">I don't believe in theory or fluff—only proven, repeatable systems. The ELEVATES framework has helped hundreds of professionals double their income, strengthen their market value, and stay resilient through every layoff cycle.</p>
         <div class="mt-3"><span class="badge-gold">20+ yrs in IT</span><span class="badge-gold">Published Author</span><span class="badge-gold">Trusted Advisor Coach</span></div>
+        <div class="founder-partners">
+          <p class="founder-partners-label mb-0">Trusted Partners</p>
+          <div class="founder-partners-logos">
+            <div class="founder-partner-logo"><img src="home-logo-slider/1.jpeg" alt="Partner 1" loading="lazy"></div>
+            <div class="founder-partner-logo"><img src="home-logo-slider/2.jpeg" alt="Partner 2" loading="lazy"></div>
+            <div class="founder-partner-logo"><img src="home-logo-slider/3.jpeg" alt="Partner 3" loading="lazy"></div>
+            <div class="founder-partner-logo"><img src="home-logo-slider/4.jpeg" alt="Partner 4" loading="lazy"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -855,6 +871,8 @@
   const starHtml='<i class="bi bi-star-fill"></i>'.repeat(5);
   const placeholderImg='review-img/placeholder.svg';
 
+  const hiddenTestimonials=new Set(['SHALINI JOSHI','RAHUL MATHUR','AMIT POPLI']);
+
   async function loadTestimonialsCarousel(){
     const slidesEl=document.getElementById('testimonialsSlides');
     if(!slidesEl) return null;
@@ -864,8 +882,11 @@
       const data=await res.json();
       if(!res.ok||!data.ok||!Array.isArray(data.testimonials)) throw new Error('bad response');
 
-      slidesEl.innerHTML=data.testimonials.map(t=>{
-        const company=t.company?`<p class="author-title">${t.company}</p>`:'';
+      const visible=data.testimonials.filter(t=>!hiddenTestimonials.has((t.name||'').trim().toUpperCase()));
+
+      slidesEl.innerHTML=visible.map(t=>{
+        const subtitle=[t.role,t.company].filter(Boolean).join(' - ');
+        const company=subtitle?`<p class="author-title">${subtitle}</p>`:'';
         const img=t.photo_url||placeholderImg;
         return `
     <div class="swiper-slide">
@@ -876,15 +897,18 @@
             <div class="testimonial-rating">${starHtml}</div>
             <p class="testimonial-text">"${t.text}"</p>
             <div class="testimonial-author">
-              <p class="author-name">${t.name}</p>
-              ${company}
+              <div class="author-row">
+                <p class="author-name">${t.name}</p>
+                ${company}
+              </div>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </div>`;
       }).join('');
-      return data.testimonials.length;
+      return visible.length;
     }catch(err){
       slidesEl.innerHTML=`<div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-overlay"><div class="testimonial-content"><p class="testimonial-text">Unable to load testimonials right now.</p></div></div></div></div>`;
       return 0;

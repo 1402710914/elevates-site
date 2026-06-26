@@ -2639,6 +2639,18 @@
             border-top: 1px solid #e0e0e0;
         }
 
+        .testimonial-author .author-meta {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .testimonial-author .author-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
         .testimonial-author img {
             width: 60px;
             height: 60px;
@@ -2651,7 +2663,19 @@
             font-size: 1rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 3px;
+            margin-bottom: 0;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .testimonial-author .author-company {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0;
+            text-align: right;
+            flex-shrink: 0;
+            max-width: 48%;
+            line-height: 1.35;
         }
 
         .testimonial-author p {
@@ -2839,6 +2863,7 @@
             </div>
 
             <?php
+            require_once __DIR__ . '/includes/testimonial_helpers.php';
             $testimonials = [];
             if (isset($mysqli)) {
                 $stmt = $mysqli->prepare("SELECT * FROM testimonials WHERE status = 'published' ORDER BY created_at DESC");
@@ -2913,14 +2938,14 @@
                                     $photoSrc = $photo !== '' ? htmlspecialchars($photo) : $avatarFallback;
                                     ?>
                                     <img src="<?= $photoSrc ?>" alt="<?= htmlspecialchars($t['name']) ?>" onerror="this.src='<?= $avatarFallback ?>'">
-                                    <div>
-                                        <h5><?= htmlspecialchars(strtoupper($t['name'])) ?></h5>
-                                        <p>
-                                            <?= htmlspecialchars($t['role']) ?>
-                                            <?php if (!empty($t['company'])): ?>
-                                                <?= $t['role'] ? ' - ' : '' ?><?= htmlspecialchars($t['company']) ?>
+                                    <div class="author-meta">
+                                        <div class="author-row">
+                                            <h5><?= htmlspecialchars(strtoupper($t['name'])) ?></h5>
+                                            <?php $authorCompany = testimonial_author_company($t); ?>
+                                            <?php if ($authorCompany !== ''): ?>
+                                                <p class="author-company"><?= htmlspecialchars($authorCompany) ?></p>
                                             <?php endif; ?>
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

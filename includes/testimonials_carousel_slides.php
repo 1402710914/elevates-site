@@ -5,12 +5,10 @@ foreach ($testimonials as $t):
     $text = htmlspecialchars((string)($t['text'] ?? ''), ENT_QUOTES, 'UTF-8');
     $img = htmlspecialchars(testimonial_photo_src((string)($t['name'] ?? ''), $t['photo_url'] ?? ''), ENT_QUOTES, 'UTF-8');
     $rating = max(1, min(5, (int)($t['rating'] ?? 5)));
-    $company = trim((string)($t['company'] ?? ''));
-    $role = trim((string)($t['role'] ?? ''));
-    $authorTitle = $role;
-    if ($company !== '') {
-        $authorTitle = $authorTitle !== '' ? $authorTitle . ' · ' . $company : $company;
-    }
+    $company = testimonial_author_company($t);
+    $companyHtml = $company !== ''
+        ? '<p class="author-title">' . htmlspecialchars($company, ENT_QUOTES, 'UTF-8') . '</p>'
+        : '';
 ?>
                      <div class="swiper-slide">
                         <div class="testimonial-card">
@@ -24,10 +22,10 @@ foreach ($testimonials as $t):
                                  </div>
                                  <p class="testimonial-text">"<?= $text ?>"</p>
                                  <div class="testimonial-author">
-                                    <p class="author-name"><?= strtoupper($name) ?></p>
-                                    <?php if ($authorTitle !== ''): ?>
-                                    <p class="author-title"><?= htmlspecialchars($authorTitle, ENT_QUOTES, 'UTF-8') ?></p>
-                                    <?php endif; ?>
+                                    <div class="author-row">
+                                       <p class="author-name"><?= strtoupper($name) ?></p>
+                                       <?= $companyHtml ?>
+                                    </div>
                                  </div>
                               </div>
                            </div>

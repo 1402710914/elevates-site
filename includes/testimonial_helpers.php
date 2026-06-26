@@ -1,5 +1,17 @@
 <?php
 
+function testimonial_author_company(array $row): string
+{
+    $role = trim((string)($row['role'] ?? ''));
+    $company = trim((string)($row['company'] ?? ''));
+
+    if ($role !== '' && $company !== '') {
+        return $role . ' - ' . $company;
+    }
+
+    return $role !== '' ? $role : $company;
+}
+
 function testimonial_photo_src(string $name, ?string $photoUrl = null): string
 {
     $photo = trim($photoUrl ?? '');

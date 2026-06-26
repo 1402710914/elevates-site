@@ -39,6 +39,7 @@ $newTestimonials = [
         'role' => '',
         'company' => '',
         'category' => 'b2b',
+        'photo_url' => 'review-img/shikhar.png',
         'text' => 'What stands out about ELEVATES is its practical approach to professional development. The impact is reflected in the confidence, mindset, and execution of our team.',
     ],
     [

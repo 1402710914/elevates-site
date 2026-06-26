@@ -954,17 +954,30 @@ body {
     padding-top: 10px;
 }
 
+.author-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
 .author-name {
     color: #fff;
     font-weight: 700;
     font-size: 14px;
     margin: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .author-title {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 12px;
-    margin: 3px 0 0 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 11px;
+    margin: 2px 0 0 0;
+    text-align: right;
+    flex-shrink: 0;
+    max-width: 48%;
+    line-height: 1.35;
 }
 
 .swiper-button-next,

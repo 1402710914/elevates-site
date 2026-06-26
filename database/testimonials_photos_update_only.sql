@@ -16,3 +16,4 @@ UPDATE testimonials SET photo_url = 'review-img/ravi-singh.png' WHERE name = 'Ra
 UPDATE testimonials SET photo_url = 'review-img/subhadip.png' WHERE name = 'Subhadip';
 UPDATE testimonials SET photo_url = 'review-img/shubham-pandey.png' WHERE name = 'Shubham Pandey';
 UPDATE testimonials SET photo_url = 'review-img/prikshit.png' WHERE name = 'Prikshit Awasthi';
+UPDATE testimonials SET photo_url = 'review-img/shikhar.png' WHERE name = 'Shikhar Shukla';

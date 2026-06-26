@@ -301,18 +301,31 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
     padding-top: 10px;
 }
 
+.author-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
 .author-name {
     color: #fff;
     font-weight: 700;
     font-size: 14px;
     margin: 0;
     text-transform: uppercase;
+    flex: 1;
+    min-width: 0;
 }
 
 .author-title {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 12px;
-    margin: 3px 0 0 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 11px;
+    margin: 2px 0 0 0;
+    text-align: right;
+    flex-shrink: 0;
+    max-width: 48%;
+    line-height: 1.35;
 }
 
 /* Responsive Styles for Testimonials */
@@ -411,15 +424,13 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
                                         </div>
                                         <p class="testimonial-text">"<?= htmlspecialchars($t['text'] ?? '') ?>"</p>
                                         <div class="testimonial-author">
-                                            <p class="author-name"><?= strtoupper(htmlspecialchars($t['name'] ?? '')) ?></p>
-                                            <?php if (!empty($t['role']) || !empty($t['company'])): ?>
-                                                <p class="author-title">
-                                                    <?= htmlspecialchars($t['role'] ?? '') ?>
-                                                    <?php if (!empty($t['company'])): ?>
-                                                        <?= $t['role'] ? ' · ' : '' ?><?= htmlspecialchars($t['company']) ?>
-                                                    <?php endif; ?>
-                                                </p>
-                                            <?php endif; ?>
+                                            <div class="author-row">
+                                                <p class="author-name"><?= strtoupper(htmlspecialchars($t['name'] ?? '')) ?></p>
+                                                <?php $authorCompany = testimonial_author_company($t); ?>
+                                                <?php if ($authorCompany !== ''): ?>
+                                                    <p class="author-title"><?= htmlspecialchars($authorCompany) ?></p>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -458,15 +469,13 @@ $businesses    = get_testimonials_by_category($mysqli, 'b2b');
                                         </div>
                                         <p class="testimonial-text">"<?= htmlspecialchars($t['text'] ?? '') ?>"</p>
                                         <div class="testimonial-author">
-                                            <p class="author-name"><?= strtoupper(htmlspecialchars($t['name'] ?? '')) ?></p>
-                                            <?php if (!empty($t['role']) || !empty($t['company'])): ?>
-                                                <p class="author-title">
-                                                    <?= htmlspecialchars($t['role'] ?? '') ?>
-                                                    <?php if (!empty($t['company'])): ?>
-                                                        <?= $t['role'] ? ' · ' : '' ?><?= htmlspecialchars($t['company']) ?>
-                                                    <?php endif; ?>
-                                                </p>
-                                            <?php endif; ?>
+                                            <div class="author-row">
+                                                <p class="author-name"><?= strtoupper(htmlspecialchars($t['name'] ?? '')) ?></p>
+                                                <?php $authorCompany = testimonial_author_company($t); ?>
+                                                <?php if ($authorCompany !== ''): ?>
+                                                    <p class="author-title"><?= htmlspecialchars($authorCompany) ?></p>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
